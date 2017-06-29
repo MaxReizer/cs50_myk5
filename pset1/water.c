@@ -3,9 +3,8 @@
 
 int main(void)
 {
-    int x = 12;
-    printf("minutes: \n");
-    int y = GetInt();
-    printf("bottles: %i\n", x * y);
-    
+    printf("minutes: ");
+    int minutes = GetInt();
+    int bottles = (12 * minutes);
+    printf("bottles: %d\n", bottles);
 }
