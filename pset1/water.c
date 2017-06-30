@@ -7,5 +7,4 @@ int main(void)
     printf("minutes: \n");
     int y = GetInt();
     printf("bottles: %i\n", x * y);
-    
 }
