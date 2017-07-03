@@ -19,11 +19,8 @@ int main(int argc, string argv[])
         return 1;
     }
     
-    //get user's number 
-    string keyword = argv[1];
-    
-    //convert string to int 
-    key = atoi(keyword);
+    //get user's number and convert it (string) to int 
+    key = atoi(argv[1]);
     
     //get message from user
     message = GetString();
