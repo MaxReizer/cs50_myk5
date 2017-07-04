@@ -1,14 +1,14 @@
 #include <stdio.h>
 #include <cs50.h>
 
-int main(void) 
+int main(void) // здесь запускается програма //
 {
 	int height = 0;
 	
 	do {
-		printf("Height:");
-		height = GetInt();
-        if (height == 0)
+		printf("Height:"); // программа запрашивает ввести высоту //
+		height = GetInt(); // поле ввода высоты //
+        if (height == 0) //если ввести высоту 0, тогда программа опять запросит ввести высоту//
         {
             return 0;
         }
