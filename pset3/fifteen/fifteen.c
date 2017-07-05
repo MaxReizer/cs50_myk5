@@ -168,7 +168,7 @@ void init(void)
 {
     for(int i = 0; i < d; i++){
         for(int j = 0; j< d; j++){
-            scanf("%d", &board[i][j]);
+            board[i][j] = getNumber();
             if(board[i][j]==-1){
                 x=i;
                 y=j;
@@ -178,13 +178,48 @@ void init(void)
 }
 
 /**
+ * Get number from a numbers string
+ */
+int getNumber(void){
+    
+    char temp[3];
+    char charOfTemp=' ';
+    int i = 0;
+    
+    do{
+        scanf("%c", &charOfTemp);
+    }while((charOfTemp==' ' || charOfTemp=='\n')&& (charOfTemp!=EOF));
+    
+    while((charOfTemp!=' ') && (charOfTemp!='\n') && (i<3)){
+        if(charOfTemp == '_')
+            charOfTemp = '0';
+        temp[i] = charOfTemp;
+        i++;
+        scanf("%c", &charOfTemp);
+    }
+    if(i==1){
+        temp[1]=temp[0];
+        temp[0]='0';
+    }
+    //temp[i+1] = '\0';
+    int number = atoi(temp);
+    return number;
+}
+
+/**
  * Prints the board in its current state.
  */
 void draw(void)
 {
     for(int i = 0; i < d; i++){
         for(int j = 0; j< d; j++){
-            printf("%d%c", board[i][j],' ');
+            if(i!=x||j!=y)
+                    printf("%d%c", board[i][j],' ');
+            else{
+                printf("%c", '_');
+                if(j<d-1)
+                    printf(" ");
+            }
         }
         printf("\n");
     }
@@ -244,11 +279,14 @@ bool move(int tile)
  */
 bool won(void)
 {
+  bool flag = true;
     board[x][y] = 0;  //curent element must be d*d
     
     for(int i = 0; i< d; i++)
         for(int j = 0; j< d; j++)
-            if(board[i][j]!=i*d+j+1)
-                return false;
-    return true;
+            if(board[i][j]!=i*d+j+1){
+                flag = false;
+                break;
+            }
+    return flag;
 }
