@@ -1,30 +1,30 @@
 #include <stdio.h>
 #include <cs50.h>
 
-int main(void)
+int main(void) 
 {
-    int height;
-    do
-    {
-        printf("height: ");
-        height = GetInt();
-    }
-while (height <= 0 || height > 23);
-
-    int i, j, k;
-    for(i = 0; i < height; i ++)
-    {
-        for(j = height - 1; j > i; j --)
+	int h;
+	do {
+		printf("Height: ");
+		h = GetInt();       //ввод высоты башни
+        if (h == 0)         //проверка высоты башни на значени 0
         {
-            printf(" ");
+            return 0;
+        }
+	} while (h < 1 || h > 23);  //проверка значения высоты башни в пределах 1-23
+
+	for(int i = 0; i < h; i++) // цикл условия высоты башни
+	{
+		for(int j = 0; j < h-i-1; j++) //цикл отрисовки "пробелов" пирамиды
+        {
+            printf("%s", " ");
         }
         
-        printf("#");
-        for(k = 0; k < i; k ++)
-        {
-            printf("#");
-        }
-        printf("#");
-        printf("\n");
-    }
+		for(int k = 0; k < i+2; k++) //цикл отрисовки "пробелов" пирамиды 
+		{
+			printf("#");
+		}
+		printf("\n");	//переход на новую строку
+	}	
+	return 0;
 }
