@@ -2,9 +2,14 @@
 #include <stdio.h>
 
 int main(void)
-{
-    printf("minutes: ");
-    int minutes = GetInt();
+{   
+    int minutes;
+    do
+    {
+        printf("minutes: ");
+        minutes = GetInt();
+    }
+    while (minutes < 1);
     
     if (minutes > 0)
     {
