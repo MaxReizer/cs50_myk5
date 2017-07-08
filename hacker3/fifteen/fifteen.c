@@ -181,10 +181,16 @@ bool move(int tile)
             }
         }
     }
-    board[posxtile][posytile] = 0;
-    board[posx0][posy0] = tile;
-    return true;
-    //    return false;
+    if (abs(posx0 - posxtile) == 1 && abs(posy0 - posytile) == 1)
+        return false;
+    else{
+        if ((abs(posx0 - posxtile) == 1 && abs(posy0 - posytile) == 0) || (abs(posx0 - posxtile) == 0 && abs(posy0 - posytile) == 1)){
+            board[posxtile][posytile] = 0;
+            board[posx0][posy0] = tile;
+            return true;
+        }
+        else return false;
+    }
 }
 
 /**
@@ -193,6 +199,19 @@ bool move(int tile)
  */
 bool won(void)
 {
-    // TODO
-    return false;
+    int check = 0;
+    int maxint = 1;
+    for (int i = 0; i < d; i++){
+        for (int j = 0; j < d; j++){
+            if (board[i][j] == maxint){
+                check++;
+                maxint++;
+                if (maxint == d*d) maxint = 0;
+            }
+        }
+    }
+    if (check == d*d)
+        return true;
+    else
+        return false;
 }
