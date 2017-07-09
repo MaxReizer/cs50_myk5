@@ -2,3 +2,4 @@
 #include <math.h>
 #include <cs50.h>
 
+изменения 
