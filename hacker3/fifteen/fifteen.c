@@ -57,6 +57,14 @@ int main(int argc, string argv[])
             DIM_MIN, DIM_MIN, DIM_MAX, DIM_MAX);
         return 2;
     }
+    
+    // open log
+        
+    FILE* file = fopen("log.txt", "w");
+    if (file == NULL)
+    {
+        return 3;
+    }
 
     
     // greet user with instructions
@@ -73,7 +81,22 @@ int main(int argc, string argv[])
 
         // draw the current state of the board
         draw();
-
+        
+        // log the current state of the board
+        for (int i = 0; i < d; i++)
+        {
+            for (int j = 0; j < d; j++)
+            {
+                fprintf(file, "%i", board[i][j]);
+                if (j < d - 1)
+                {
+                    fprintf(file, "|");
+                }
+            }
+            fprintf(file, "\n");
+        }
+        fflush(file);
+        
         // check for win
         if (won())
         {
@@ -84,7 +107,11 @@ int main(int argc, string argv[])
         // prompt for move
         printf("Tile to move: ");
         int tile = GetInt();
-
+        
+        // log move (for testing)
+        fprintf(file, "%i\n", tile);
+        fflush(file);
+        
         // move if possible, else report illegality
         if (!move(tile))
         {
