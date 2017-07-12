@@ -1,7 +1,7 @@
-#include <stdio.h>
+#include <stdio.h> // объвление используемых библиотек
 #include <cs50.h>
 
-int main(void)
+int main(void) //объявление основной функции
 {
-    printf("hello, world\n");
+    printf("hello, world\n"); // вывод текста на экран
 }
