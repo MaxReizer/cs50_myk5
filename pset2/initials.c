@@ -1,11 +1,11 @@
-#include <cs50.h>
+#include <cs50.h> //подключение используемых библиотек
 #include <stdio.h>
 #include <string.h>
 #include <ctype.h>
 
-void printInitials(string name);
+void printInitials(string name); //объявление функции
 
-int main(void)
+int main(void) //объявление основной функции
 {
     string name = GetString();
     printInitials(name);

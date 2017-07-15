@@ -1,0 +1,21 @@
+0.  3 - red, green, blue
+1.  GIF
+2.  Lossless and lossy compression are terms that describe whether or not,
+    in the compression of a file, all original data can be recovered
+    when the file is uncompressed.
+3.  JPEG
+4.  TODO
+5.  TODO
+6.  TODO
+7.  TODO
+8.  TODO
+9.  TODO
+10. TODO
+11. TODO
+12. TODO
+13. TODO
+14. TODO
+15. TODO
+16. TODO
+17. TODO
+18. TODO
