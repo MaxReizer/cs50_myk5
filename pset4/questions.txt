@@ -1,0 +1,23 @@
+0.  TODO
+1.  TODO
+2.  TODO
+3.  TODO
+4.  TODO
+5.  TODO
+6.  https://ru.wikipedia.org/wiki/Stdint.h
+7.  It use to define the new vareables types
+8.  BYTE - 1 byte (unsigned)
+    DWORD - 4 bytes (unsigned),
+    LONG - 4 bytes (signed)
+    WORD - 2 bytes (unsigned)
+9.  BITMAP FILE TYPE
+10. bfSize - BITMAP FILE SIZE
+    biSize - BITMAP IMMAGE SIZE
+11. If value is negative, that the immage was wrote from top do bottom
+12. biBitCount
+13. We try to open the file in the directory for which we didn't have the proper permissions
+14. Because it reads array of byte (byte [])
+15. 3
+16. Fseek - setting of positions in the data stream
+17. reference point offset
+18. TODO
